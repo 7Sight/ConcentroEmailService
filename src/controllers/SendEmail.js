@@ -10,7 +10,7 @@ module.exports = {
     async send(req, res) {
 
         try {
-            const bodyReq = req.headers;
+            const bodyReq = req.body;
 
             console.log(bodyReq);
 
@@ -25,13 +25,13 @@ module.exports = {
 
             })
 
-            const emailSent = await transporter.sendMail({
+           const emailSent = await transporter.sendMail({
                 html:
                     ` Um possivel cliente ficou interessado em nossos serviços, segue os dados para contato:<br>
-                <b>Nome:</b> ${bodyReq.nome} <br>
+                <b>Nome:</b> ${bodyReq.name} <br>
                 <b>E-mail:</b> ${bodyReq.email} <br> 
-                <b>Telefone:</b> ${bodyReq.telefone} <br>
-                <b>Descrição:</b> ${bodyReq.texto} <br>
+                <b>Assunto:</b> ${bodyReq.subject} <br>
+                <b>Descrição:</b> ${bodyReq.description} <br>
                 <b>Data:</b> ${localDate}
                 `,
                 subject: "Um possivel cliente entrou em contato",

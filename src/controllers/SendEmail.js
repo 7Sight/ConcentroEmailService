@@ -9,6 +9,7 @@ module.exports = {
 
     async send(req, res) {
 
+
         try {
             const bodyReq = req.body;
 
@@ -52,6 +53,8 @@ module.exports = {
     },
 
     async sendPatner(req, res) {
+
+        
 
         try {
             const bodyReq = req.headers;
